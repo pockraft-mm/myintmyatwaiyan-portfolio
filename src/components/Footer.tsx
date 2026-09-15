@@ -9,8 +9,8 @@ export function Footer() {
     <footer className="bg-zinc-950 text-white">
       <Container className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-[1fr_180px_220px] lg:gap-16 lg:py-20">
         <div className="sm:col-span-2 lg:col-span-1">
-          <a className="focus-ring inline-flex rounded-lg" href={site.communityUrl} target="_blank" rel="noreferrer"><Logo inverse label="Pockraft" /></a>
-          <p className="mt-5 max-w-xs text-sm leading-6 text-zinc-400">Built in Talkware Meetup.<br />A project pitch landing page template.</p>
+          <RouteLink className="focus-ring inline-flex rounded-lg" href="/"><Logo inverse /></RouteLink>
+          <p className="mt-5 max-w-xs text-sm leading-6 text-zinc-400">A polished React landing page template for presenting and launching products.</p>
         </div>
         <FooterLinks title="Project">
           <a href="/#about">About</a>
@@ -18,11 +18,11 @@ export function Footer() {
           <a href="/#pricing">Pricing</a>
           <RouteLink href="/demo">Demo</RouteLink>
         </FooterLinks>
-        <FooterLinks title="Talkware">
-          <a href={site.communityUrl} target="_blank" rel="noreferrer">Main website</a>
-          <a href={site.templateUrl} target="_blank" rel="noreferrer">Template repository</a>
-          <a href={site.communityGitHub} target="_blank" rel="noreferrer">GitHub community</a>
-          <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>
+        <FooterLinks title="Resources">
+          <a href={site.repositoryUrl} target="_blank" rel="noreferrer">Source code</a>
+          <a href={site.readmeUrl} target="_blank" rel="noreferrer">Documentation</a>
+          <a href={site.creditsUrl} target="_blank" rel="noreferrer">Credits</a>
+          <a href={site.referenceCreatorGitHub} target="_blank" rel="noreferrer">Creator on GitHub</a>
         </FooterLinks>
       </Container>
 
@@ -40,7 +40,7 @@ export function Footer() {
 
       <Container className="flex min-h-16 flex-col justify-center gap-1 border-t border-white/10 py-4 text-[11px] text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
         <span>© 2026 {project.name}</span>
-        <span>Built in {site.communityName}</span>
+        <span>Open-source landing page template</span>
       </Container>
     </footer>
   );

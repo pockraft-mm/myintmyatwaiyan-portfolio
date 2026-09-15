@@ -1,8 +1,8 @@
-# Talkware Project Pitch Landing Page
+# Pockraft — React Landing Page Template
 
-A modern, reusable React landing-page template based on the structure and content objects of [`MoriartyLink/landing-page-template`](https://github.com/MoriartyLink/landing-page-template).
+A polished, reusable landing page for presenting and launching a product. Pockraft is built with React, TypeScript, Vite, and Tailwind CSS, and is based on the structure and content objects of [`MoriartyLink/landing-page-template`](https://github.com/MoriartyLink/landing-page-template).
 
-The visual system is now Tailwind CSS-first, while the original route and section skeleton remains intact:
+It includes a complete project-pitch flow and a separate demo route:
 
 ```text
 Header
@@ -12,6 +12,8 @@ Footer
 ```
 
 ## Quick start
+
+Requires Node.js 20 or newer.
 
 ```bash
 npm install
@@ -26,13 +28,15 @@ npm run build
 npm run preview
 ```
 
-## Fast customization
+## Customize the template
 
 Most projects only need three editing areas:
 
-1. `src/data/project.ts` — project identity, all feature/process/pricing objects, links, and credits.
+1. `src/data/project.ts` — project identity, feature/process/pricing content, repository links, and credits.
 2. `src/components/sections/` — landing-page section presentation.
 3. `src/styles/globals.css` — Tailwind import, shared tokens, and the two small custom utilities.
+
+Replace `public/pockraft-logo.png` to use your own brand mark. The header and footer both use this asset through `src/components/Logo.tsx`.
 
 ## Structure
 
@@ -60,7 +64,7 @@ src/
     content.ts
 ```
 
-This follows a small compositional UI approach: data stays separate from presentation, route pages only compose sections, and primitives own repeated visual rules. It keeps the template quick to understand without adding a framework-sized abstraction layer.
+This follows a small compositional UI approach: data stays separate from presentation, route pages only compose sections, and primitives own repeated visual rules. This keeps the template quick to understand without adding a framework-sized abstraction layer.
 
 ## Routes
 
@@ -69,7 +73,7 @@ This follows a small compositional UI approach: data stays separate from present
 | `/` | Main project pitch, value, workflow, pricing, and CTA. |
 | `/demo` | Product evidence and contact section. |
 
-The lightweight History API router is retained. Configure your host to serve `index.html` for direct requests to `/demo`.
+The template uses a lightweight History API router. Configure your host to serve `index.html` for direct requests to `/demo`.
 
 ## Attribution
 

@@ -50,11 +50,9 @@ export const pricingTiers = [
 ] as const satisfies readonly PricingTier[];
 
 export const site = {
-  communityName: 'Talkware Meetup',
-  communityUrl: 'https://www.talkware.click',
-  communityGitHub: 'https://github.com/talkware-mm/',
-  templateUrl: 'https://github.com/MoriartyLink/landing-page-template',
-  contactEmail: 'team.talkware@gmail.com',
+  repositoryUrl: 'https://github.com/MoriartyLink/landing-page-template-pockraft',
+  readmeUrl: 'https://github.com/MoriartyLink/landing-page-template-pockraft#readme',
+  creditsUrl: 'https://github.com/MoriartyLink/landing-page-template-pockraft/blob/main/CREDITS.md',
   referenceCreator: 'Min Thu Khaing',
   referenceCreatorGitHub: 'https://github.com/MoriartyLink',
   upstreamFoundation: 'AppStack-GVN/BuildersQuickTurnStack',
