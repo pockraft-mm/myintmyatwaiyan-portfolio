@@ -531,10 +531,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--highlight); out
 .about .fact-card dt { margin-top: 5px; color: #77777e; font-size: 10px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
 .about .fact-card dd { margin: 0; color: #242428; font-size: 12px; line-height: 1.5; }
 .about .fact-card dd.fact-value { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
-.about .fact-card-education { align-items: center; text-align: center; }
-.about .fact-card-education dd.fact-value { justify-content: center; width: 100%; }
-.about .education-value { display: flex; flex-direction: column; align-items: center; gap: 7px; }
-.about .education-value .fact-logo { width: 36px; height: 36px; flex-basis: 36px; border: 0; border-radius: 0; background: transparent; }
+.about .fact-card-education { align-items: flex-start; text-align: left; }
+.about .fact-card-education dd.fact-value { justify-content: flex-start; width: 100%; }
+.about .education-value { display: flex; flex-direction: row; align-items: center; gap: 8px; width: 100%; text-align: left; }
+.about .education-value .fact-logo { width: 32px; height: 32px; flex: 0 0 32px; margin-left: auto; border: 0; border-radius: 0; background: transparent; }
 .about .tech-item {
   display: inline-flex;
   align-items: center;
