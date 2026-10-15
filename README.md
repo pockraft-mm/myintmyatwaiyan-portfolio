@@ -16,6 +16,8 @@ shared Header, LandingPage, DemoPage, and Footer
 
 The shared UI does not import a particular product. `App` receives a `LandingPageConfig`, and the provider makes that config available to every section.
 
+For the active portfolio's design tokens, low-coupling theme factory pattern, and safe visual-edit workflow, see [the portfolio design system guide](docs/portfolio-design-system-guide.md).
+
 ## Create another product landing page
 
 1. Copy the existing preset:

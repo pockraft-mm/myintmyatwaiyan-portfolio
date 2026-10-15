@@ -96,3 +96,95 @@ button { color: inherit; }
   .price-amount { font-size: 28px; }
   .price-features { margin: 16px 0 20px; }
 }
+
+/* Quarter-donut mobile navigation */
+.mobile-donut { display: none; }
+@media (max-width: 720px) {
+  .site-header .nav { display: none; }
+  .mobile-donut {
+    position: fixed;
+    right: 16px;
+    bottom: max(20px, env(safe-area-inset-bottom));
+    z-index: 80;
+    width: 54px;
+    height: 54px;
+  }
+  .mobile-donut__nav { position: absolute; inset: 0; overflow: visible; }
+  .mobile-donut__wheel {
+    position: absolute;
+    top: -193px;
+    left: -193px;
+    width: 220px;
+    height: 220px;
+    overflow: visible;
+    opacity: 0;
+    transform: scale(.72) rotate(-14deg);
+    transform-origin: 220px 220px;
+    pointer-events: none;
+    transition: opacity .38s ease, transform .82s cubic-bezier(.16, 1, .3, 1);
+  }
+  .mobile-donut.is-open .mobile-donut__wheel {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+    pointer-events: auto;
+  }
+  .mobile-donut__wheel a {
+    opacity: 0;
+    transform: scale(.94);
+    transform-box: view-box;
+    transform-origin: 220px 220px;
+    transition: opacity .34s ease, transform .6s cubic-bezier(.16, 1, .3, 1);
+  }
+  .mobile-donut.is-open .mobile-donut__wheel a { opacity: 1; transform: scale(1); }
+  .mobile-donut.is-open .mobile-donut__wheel a:nth-child(1) { transition-delay: .04s; }
+  .mobile-donut.is-open .mobile-donut__wheel a:nth-child(2) { transition-delay: .1s; }
+  .mobile-donut.is-open .mobile-donut__wheel a:nth-child(3) { transition-delay: .16s; }
+  .mobile-donut.is-open .mobile-donut__wheel a:nth-child(4) { transition-delay: .22s; }
+  .mobile-donut__wheel path {
+    fill: color-mix(in oklch, var(--background) 94%, #152c4e);
+    stroke: color-mix(in oklch, var(--border) 55%, #9bb8e8);
+    stroke-width: 2;
+    stroke-linejoin: round;
+    transition: fill .25s ease, stroke .25s ease, filter .25s ease;
+  }
+  .mobile-donut__wheel text {
+    fill: var(--foreground);
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 650;
+    text-anchor: middle;
+    dominant-baseline: central;
+    pointer-events: none;
+  }
+  .mobile-donut__wheel a:hover path,
+  .mobile-donut__wheel a:focus-visible path {
+    fill: color-mix(in oklch, var(--foreground) 17%, var(--background));
+    stroke: var(--foreground);
+    stroke-width: 3;
+    filter: drop-shadow(0 0 9px color-mix(in oklch, var(--foreground) 28%, transparent));
+  }
+  .mobile-donut__wheel a:hover text,
+  .mobile-donut__wheel a:focus-visible text { fill: var(--foreground); }
+  .mobile-donut .menu-button {
+    position: absolute;
+    inset: 0;
+    width: 54px;
+    height: 54px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    border: 1px solid color-mix(in oklch, var(--border) 60%, var(--foreground));
+    border-radius: 50%;
+    background: color-mix(in oklch, var(--background) 90%, #19345b);
+    color: var(--foreground);
+    box-shadow: 0 8px 26px rgb(0 0 0 / .24), inset 0 1px rgb(255 255 255 / .08);
+    transition: transform .28s cubic-bezier(.2, .7, .2, 1), background .25s ease, box-shadow .25s ease;
+  }
+  .mobile-donut .menu-button:hover { transform: scale(1.06); box-shadow: 0 10px 30px rgb(0 0 0 / .3), 0 0 18px color-mix(in oklch, var(--foreground) 18%, transparent); }
+  .mobile-donut.is-open .menu-button { background: color-mix(in oklch, var(--background) 76%, #234578); }
+  .mobile-donut .menu-button svg { transition: transform .5s cubic-bezier(.16, 1, .3, 1); }
+  .mobile-donut.is-open .menu-button svg { transform: rotate(90deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobile-donut__wheel, .mobile-donut__wheel a, .mobile-donut__wheel path, .mobile-donut .menu-button, .mobile-donut .menu-button svg { transition: none !important; }
+}
